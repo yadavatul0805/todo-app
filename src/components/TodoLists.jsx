@@ -66,11 +66,14 @@ const TodoLists = () => {
 
     
   return (
-    <div>
-        <h2>Add your daily Todo Here.</h2>
+    <div className="todo-container">
+        <h2>Taskify</h2>
+        <p className="subtitle">Plan your day, one task at a time</p>
+        <div  className="input-group">
         <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} onKeyDown={(e)=> e.key === 'Enter' && handleAddTodo()} placeholder='Enter Todo'  />
         <button onClick={()=> handleAddTodo()}>Add</button>
-        <ul>
+        </div>
+        <ul className="todo-list">
           {todoLists.map((t)=>{
             return(
             <li key={t.id}>
